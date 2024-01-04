@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide{
+             filter:brightness(0);
+            
+        }
+        .show{
+            filter:brightness(1)
+        }
+        .btn{
+            background-color: green;
+            font-size: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+        .btn1{
+            background-color: brown;
+            font-size: 20px;
+           
+            color: white;
+        }
+    </style>
+</head>
+<body style="background-image: url('./temp4.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;">
+    <center><h1><u><mark>Matching Game</mark></u></h1></center>
+    
+   <center> <button class="btn1">Back</button>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./index2.html"><button class="btn">Restart</button></a></center>
+   <center>Tap on dark boxes for matching images</center>
+     
+    
+    <center><img class="hide" onclick="clicks(this)" src="./prabhas.jpg" width="150px" height="150px">
+    <img class="hide" onclick="clicks(this)" src="./kajal.jpg" width="150px" height="150px">
+    <img class="hide" onclick="clicks(this)" src="./rajini.jpg" width="150px" height="150px">
+    <img class="hide" onclick="clicks(this)" src="./kamal.jpg" width="150px" height="150px"> 
+    <br>
+    <img class="hide" onclick="clicks(this)" src="./hrithik.jpg" width="150px" height="150px">
+    <img class="hide" onclick="clicks(this)" src="./chai.jpg" width="150px" height="150">
+    <img class="hide" onclick="clicks(this)" src="./jack.jpg" width="150px" height="150px">
+    <img class="hide" onclick="clicks(this)" src="./sam.jpg" width="150px" height="150px">
+    <br>
+    <img class="hide" onclick="clicks(this)" src="./prabhas.jpg" width="150px" height="150px">
+    <img class="hide" onclick="clicks(this)" src="./kamal.jpg" width="150px" height="150px">
+    <img class="hide" onclick="clicks(this)" src="./hrithik.jpg" width="150px" height="150px">
+    <img class="hide" onclick="clicks(this)" src="./rajini.jpg" width="150px" height="150px">
+  
+    <br>
+    <img class="hide" onclick="clicks(this)" src="./sam.jpg" width="150px" height="150px"> 
+    <img class="hide" onclick="clicks(this)" src="./jack.jpg" width="150px" height="150px">
+    <img class="hide" onclick="clicks(this)" src="./chai.jpg" width="150px" height="150">
+    <img class="hide" onclick="clicks(this)" src="./kajal.jpg" width="150px" height="150px"></center>
+   <center><h3>After matching all game is over.Press restart to play again</h3></center>
+    <script>
+        let btn=document.getElementsByTagName("button");
+        btn[0].addEventListener("click",()=>{
+            window.location.assign("index1.html")
+        })
+        photo1=null;
+        photo2=null;
+        var matchSound= new Audio('sounds/match.mp3')
+        var noMatchSound= new Audio("sounds/notmatch.mp3")
+        function clicks(photo){
+        if(photo1==null){
+            photo.className="show";
+            photo1=photo;
+        }
+        else if(photo2==null){
+            photo.className="show";
+            photo2=photo;
+            setTimeout("checkMatch()",900);
+        }    
+        }
+
+        function checkMatch(){
+            if(photo1.src==photo2.src){
+               matchSound.play()
+                photo1=null;
+                photo2=null;
+              
+            }
+            else {
+                noMatchSound.play()
+                photo1.className="hide"
+                photo2.className="hide"
+                photo1=null;
+                photo2=null;
+              
+            }
+            
+        }
+       
+       
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .btn{
+            background-color: green;
+            font-size: 40px;
+            border-radius: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body style="background-image: url('./temp3.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;">
+
+    <br><br><br><br><br><br><br>
+
+    <center><h1><u>MATCHING GAME</u></h1></center>
+    <center><img src="./wel.jpg" width="500px" height="70px"></center>
+    <center><h2>Note:</h2><h3>Click on the dark blocks, it shows images.Match the <br>
+    same image by clicking on other block.If the image <br>
+is matched it appears then match other pairs,if it is not <br>
+matched it disappears.</h3></center>
+<br><br><br>
+<marquee direction="down" scrollamount="15"><center><img src="./arr4.jpg" alt="" width="35"></center></marquee> 
+<center><button class="btn">Tap to Play</button></center>
+<br><br>
+<center><h2><u>Enjoy the Game </u></h2></center>
+
+<script>
+let btn=document.getElementsByTagName("button");
+        btn[0].addEventListener("click",()=>{
+            window.location.assign("./prj.html")
+        })
+    </script>
+    
+</body>
+</html>
